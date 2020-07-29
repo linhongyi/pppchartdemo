@@ -14,7 +14,7 @@ export class AppComponent  {
 
   constructor(public router:Router)
   {
-    
+    this.router.navigate(['/HorizontalBarChart']);
   }
 
   changeValue()
