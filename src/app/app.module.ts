@@ -12,15 +12,17 @@ import { HorizontalbarchartComponent } from './horizontalbarchart/horizontalbarc
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule, Routes } from '@angular/router';
 import { VerticalbarchartComponent } from './verticalbarchart/verticalbarchart.component';
+import { PipeChartBarChartComponent } from './pipe-chart-bar-chart/pipe-chart-bar-chart.component';
 
 const routes: Routes = [
   { path: 'HorizontalBarChart', component: HorizontalbarchartComponent },
   { path: 'VerticalBarChart', component: VerticalbarchartComponent },
+  { path: 'PipChart', component: PipeChartBarChartComponent}
 ];
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSelectModule, NgxChartsModule, RouterModule.forRoot(routes)],
-  declarations: [ AppComponent, HelloComponent, HorizontalbarchartComponent, VerticalbarchartComponent ],
+  declarations: [ AppComponent, HelloComponent, HorizontalbarchartComponent, VerticalbarchartComponent, PipeChartBarChartComponent ],
   bootstrap:    [ AppComponent ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
