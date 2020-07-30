@@ -18,19 +18,21 @@ import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatListModule} from '@angular/material/list';
+import { AdvanceChartBarComponent } from './advance-chart-bar/advance-chart-bar.component';
 
 const routes: Routes = [
   { path: 'HorizontalBarChart', component: HorizontalbarchartComponent },
   { path: 'VerticalBarChart', component: VerticalbarchartComponent },
-  { path: 'PipChart', component: PipeChartBarChartComponent },
+  { path: 'PipChart1', component: PipeChartBarChartComponent },
   { path: 'PipGridChart', component: PipeGridChartComponent},
   { path: 'BubbleChart', component: BubbleChartComponent},
-  { path: 'LineChart', component: LineChartComponent}
+  { path: 'LineChart', component: LineChartComponent},
+  { path: 'PipChart2', component: AdvanceChartBarComponent}
 ];
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSelectModule, NgxChartsModule, MatSidenavModule, MatListModule, RouterModule.forRoot(routes)],
-  declarations: [ AppComponent, HelloComponent, HorizontalbarchartComponent, VerticalbarchartComponent, PipeChartBarChartComponent, PipeGridChartComponent, BubbleChartComponent, LineChartComponent ],
+  declarations: [ AppComponent, HelloComponent, HorizontalbarchartComponent, VerticalbarchartComponent, PipeChartBarChartComponent, PipeGridChartComponent, BubbleChartComponent, LineChartComponent, AdvanceChartBarComponent ],
   bootstrap:    [ AppComponent ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },

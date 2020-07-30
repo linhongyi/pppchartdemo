@@ -14,7 +14,8 @@ export class AppComponent {
   public charts = [
     "HorizontalBarChart",
     "VerticalBarChart",
-    "PipChart",
+    "PipChart1",
+    "PipChart2",
     "PipGridChart",
     "BubbleChart",
     "LineChart"
