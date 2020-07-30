@@ -1,20 +1,18 @@
-<div class="container">
-	  <mat-form-field appearance="fill">
-		<mat-label>Select an option</mat-label>
-		<mat-select [(value)]="selected" (selectionChange)="changeValue()">
-			<mat-option value="HorizontalBarChart">HorizontalBarChart</mat-option>
-			<mat-option value="VerticalBarChart">VerticalBarChart</mat-option>
-      <mat-option value="PipChart">PipChart</mat-option>
-      <mat-option value="PipGridChart">PipeGridChart</mat-option>
-      <mat-option value="BubbleChart">BubbleChart</mat-option>
-      <mat-option value="LineChart">LineChart</mat-option>
-		</mat-select>
-		</mat-form-field>
+<mat-drawer-container fullscreen>
+	<mat-drawer mode="side" opened>
 
-		<p>You selected: {{selected}}</p>
-</div>
-<br>
-<br>
-<div class="container1">
-  <router-outlet></router-outlet>
-</div>
+		<mat-selection-list [multiple]="false" (selectionChange)="listChangeValue($event)">
+			<mat-list-option *ngFor="let chart of charts" [value]="chart">
+				{{chart}}
+			</mat-list-option>
+		</mat-selection-list>
+
+	</mat-drawer>
+	<mat-drawer-content>
+
+		<div class="container1">
+			<router-outlet></router-outlet>
+		</div>
+
+	</mat-drawer-content>
+</mat-drawer-container>

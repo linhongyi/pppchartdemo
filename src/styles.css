@@ -1,18 +1,11 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.container{
-  text-align: center;
-  /* display: flex;
-  align-content: center;
-  vertical-align: center; */
-}
-
-
 .container1{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 
