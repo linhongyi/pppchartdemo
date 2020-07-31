@@ -1,6 +1,7 @@
 import { Component, VERSION } from "@angular/core";
 import { Router } from "@angular/router";
 import { MatSelectionListChange } from "@angular/material/list";
+import { PropertyService } from "./property.service";
 
 
 @Component({
@@ -20,7 +21,8 @@ export class AppComponent {
     "BubbleChart",
     "LineChart"
   ];
-  constructor(public router: Router) {
+
+  constructor(public router: Router, public propertyService:PropertyService) {
     this.router.navigate(["/HorizontalBarChart"]);
   }
 

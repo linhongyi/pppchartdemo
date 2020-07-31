@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { PropertyService } from "../property.service";
 
 @Component({
   selector: "app-horizontalbarchart",
@@ -25,8 +26,6 @@ export class HorizontalbarchartComponent implements OnInit {
   view: [number, number] = [700, 400];
 
   // options
-  showXAxis: boolean = true;
-  showYAxis: boolean = true;
   gradient: boolean = false;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
@@ -40,7 +39,7 @@ export class HorizontalbarchartComponent implements OnInit {
     domain: ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
   };
 
-  constructor() {
+  constructor(public propertyService:PropertyService) {
     // Object.assign(this, { this.single });
   }
 
@@ -58,11 +57,5 @@ export class HorizontalbarchartComponent implements OnInit {
     console.log("Deactivate", JSON.parse(JSON.stringify(data)));
   }
 
-  onToggleShowXAxisChange() {
-    this.showXAxis = !this.showXAxis;
-  }
-
-  onToggleShowYAxisChange() {
-    this.showYAxis = !this.showYAxis;
-  }
+  
 }

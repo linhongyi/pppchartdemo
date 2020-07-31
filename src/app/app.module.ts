@@ -22,6 +22,7 @@ import { AdvanceChartBarComponent } from './advance-chart-bar/advance-chart-bar.
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PropertyService } from './property.service';
 
 const routes: Routes = [
   { path: 'HorizontalBarChart', component: HorizontalbarchartComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   bootstrap:    [ AppComponent ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+    PropertyService
   ]
 })
 export class AppModule { }

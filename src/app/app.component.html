@@ -1,15 +1,40 @@
 <div class="example-container">
 	<mat-toolbar color="primary">
-		Chart Demo
+    <span>Chart Demo</span>
+    <span class="fill-space"></span>
+    <span>{{list.selectedOptions.selected[0]?.value}}</span>
+    <span class="fill-space"></span>
 	</mat-toolbar>
 
 	<mat-sidenav-container style="height:100%">
 		<mat-sidenav opened mode="side">
-			<mat-selection-list [multiple]="false" (selectionChange)="listChangeValue($event)">
-				<mat-list-option *ngFor="let chart of charts" [value]="chart">
+			<mat-selection-list #list [multiple]="false" (selectionChange)="listChangeValue($event)">
+				<mat-list-option *ngFor="let chart of charts" [value]="chart" [selected]="(chart==selected)?true:false">
 					{{chart}}
 				</mat-list-option>
 			</mat-selection-list>
+
+
+			<mat-accordion>
+				<mat-expansion-panel>
+					<mat-expansion-panel-header>
+						<mat-panel-title>
+							Property
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+
+					<mat-action-row>
+						<mat-slide-toggle [checked]="propertyService.showXAxis" (toggleChange)="propertyService.onToggleShowXAxisChange()">showXAxis
+						</mat-slide-toggle>
+					</mat-action-row>
+					<mat-action-row>
+						<mat-slide-toggle [checked]="propertyService.showYAxis" (toggleChange)="propertyService.onToggleShowYAxisChange()">showYAxis
+						</mat-slide-toggle>
+					</mat-action-row>
+
+				</mat-expansion-panel>
+			</mat-accordion>
+
 		</mat-sidenav>
 
 		<mat-sidenav-content>
