@@ -1,4 +1,27 @@
-<mat-drawer-container fullscreen>
+<div class="example-container">
+	<mat-toolbar color="primary">
+		Chart Demo
+	</mat-toolbar>
+
+	<mat-sidenav-container style="height:100%">
+		<mat-sidenav opened mode="side">
+			<mat-selection-list [multiple]="false" (selectionChange)="listChangeValue($event)">
+				<mat-list-option *ngFor="let chart of charts" [value]="chart">
+					{{chart}}
+				</mat-list-option>
+			</mat-selection-list>
+		</mat-sidenav>
+
+		<mat-sidenav-content>
+			<div class="container1">
+				<router-outlet></router-outlet>
+			</div>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>
+
+
+<!-- <mat-drawer-container>
 	<mat-drawer mode="side" opened>
 
 		<mat-selection-list [multiple]="false" (selectionChange)="listChangeValue($event)">
@@ -8,6 +31,8 @@
 		</mat-selection-list>
 
 	</mat-drawer>
+
+
 	<mat-drawer-content>
 
 		<div class="container1">
@@ -15,4 +40,4 @@
 		</div>
 
 	</mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container> -->

@@ -16,9 +16,12 @@ import { PipeChartBarChartComponent } from './pipe-chart-bar-chart/pipe-chart-ba
 import { PipeGridChartComponent } from './pipe-grid-chart/pipe-grid-chart.component';
 import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import {MatSidenavModule} from '@angular/material/sidenav'
-import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatListModule } from '@angular/material/list';
 import { AdvanceChartBarComponent } from './advance-chart-bar/advance-chart-bar.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const routes: Routes = [
   { path: 'HorizontalBarChart', component: HorizontalbarchartComponent },
@@ -31,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSelectModule, NgxChartsModule, MatSidenavModule, MatListModule, RouterModule.forRoot(routes)],
+  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatSelectModule, NgxChartsModule, MatSidenavModule, MatListModule, MatSlideToggleModule, MatExpansionModule, MatToolbarModule, RouterModule.forRoot(routes)],
   declarations: [ AppComponent, HelloComponent, HorizontalbarchartComponent, VerticalbarchartComponent, PipeChartBarChartComponent, PipeGridChartComponent, BubbleChartComponent, LineChartComponent, AdvanceChartBarComponent ],
   bootstrap:    [ AppComponent ],
   providers: [

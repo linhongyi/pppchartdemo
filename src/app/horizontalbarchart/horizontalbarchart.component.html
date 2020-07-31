@@ -1,16 +1,26 @@
-<ngx-charts-bar-horizontal
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="single"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)">
+<mat-accordion>
+	<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+		<mat-expansion-panel-header>
+			<mat-panel-title>
+				Property
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+
+		<mat-action-row>
+			<mat-slide-toggle [checked]="showXAxis" (toggleChange)="onToggleShowXAxisChange()">showXAxis
+			</mat-slide-toggle>
+		</mat-action-row>
+		<mat-action-row>
+			<mat-slide-toggle [checked]="showYAxis" (toggleChange)="onToggleShowYAxisChange()">showYAxis
+			</mat-slide-toggle>
+		</mat-action-row>
+
+	</mat-expansion-panel>
+</mat-accordion>
+
+
+<ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+	[xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+	[showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)"
+	(activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
 </ngx-charts-bar-horizontal>
