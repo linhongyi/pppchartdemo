@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyService } from '../property.service';
 
 @Component({
   selector: 'app-verticalbarchart',
@@ -69,8 +70,7 @@ export class VerticalbarchartComponent implements OnInit {
   view:[number,number] = [700, 400];
 
   // options
-  showXAxis = true;
-  showYAxis = true;
+ 
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
@@ -82,7 +82,7 @@ export class VerticalbarchartComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  constructor() { 
+  constructor(public propertyService:PropertyService) { 
     // Object.assign(this, { single })
   }
 

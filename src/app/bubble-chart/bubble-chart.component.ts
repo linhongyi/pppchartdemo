@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyService } from '../property.service';
 
 @Component({
   selector: 'app-bubble-chart',
@@ -8,8 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class BubbleChartComponent implements OnInit {
 
   // options
-  showXAxis: boolean = true;
-  showYAxis: boolean = true;
   gradient: boolean = false;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
@@ -126,7 +125,7 @@ export class BubbleChartComponent implements OnInit {
   view:[number,number] = [800, 400];
 
 
-  constructor() {
+  constructor(public propertyService:PropertyService) {
     // Object.assign(this, { bubbleData });
   }
 

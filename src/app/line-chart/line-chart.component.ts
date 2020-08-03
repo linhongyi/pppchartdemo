@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { PropertyService } from "../property.service";
 
 @Component({
   selector: "app-line-chart",
@@ -95,7 +96,7 @@ export class LineChartComponent implements OnInit {
     domain: ["#5AA454", "#E44D25", "#CFC0BB", "#7aa3e5", "#a8385d", "#aae3f5"]
   };
 
-  constructor() {
+  constructor(public propertyService:PropertyService) {
     // Object.assign(this, { multi });
   }
 
